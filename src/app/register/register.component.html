@@ -1,0 +1,59 @@
+<form class="form-horizontal" autocomplete="off" [formGroup]="register" (ngSubmit)="onSubmit(register)">
+<div class="form-group">
+    <div class="col-sm-12">
+   <label for="name" >Name</label>
+<input [ngClass]="{'error-class-input': register.get('name').touched && register.get('name').hasError('required')}" type="text"
+ formControlName="name" class="form-control" placeholder="First and last name" />
+    <div class="error-class-text" *ngIf="register.get('name').touched && register.get('name').hasError('required')">
+<span class="form-control-invalid-text">Your full name is required.</span>
+      <!--<input type="text" id="name" class="form-control" formControlName="name" required>-->
+   </div> </div></div>
+
+
+    <div class="col-sm-12">
+        <div class="form-group">
+      <label for="email">Email</label>
+ <input [ngClass]="{'error-class-input': register.get('email').touched && register.get('email').hasError('required')}" type="email"
+ class="form-control" formControlName="email" placeholder="you@example.com" />
+<div class="error-class-text" *ngIf="register.get('email').touched && register.get('email').hasError('required')">
+<span class="form-control-invalid-text">A valid email address is required.</span>
+      <!--<input type="text" id="email" class="form-control" formControlName="email" required>-->
+   </div> </div>
+</div>
+     
+
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="zipCode">Zip Code</label>
+        
+<input [ngClass]="{'error-class-input':register.get('zipcode').touched && register.get('zipcode').hasError('required')}" type="text"
+ class="form-control" formControlName="zipcode"   placeholder="ZipCode" ng-pattern='/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/' placeholder='' />
+ <div class="error-class-text" *ngIf="register.get('zipcode').touched && register.get('zipcode').hasError('required')">
+<span class="form-control-invalid-text">enter your zipcode</span>
+        <!--<input type="text" id="zipcode" class="form-control" formControlName="zipcode"required >-->
+    </div>  </div>
+     </div>
+     
+     <div class="col-md-6" >
+         <div class="form-group">
+        <label for="Location" >location</label>
+<input [ngClass]="{'error-class-input':register.get('location').touched && register.get('location').hasError('required')}" type="text"
+ class="form-control"  formControlName="location" />
+ <div class="error-class-text" *ngIf="register.get('location').touched && register.get('location').hasError('required')">
+<span class="form-control-invalid-text">input your location.</span>
+        <!--<input type="text" id="location" class="form-control" formControlName="location" required>-->
+     </div> </div>
+  </div>
+     
+  <div class="col-md-6" >
+   <!--<button [disabled]="register.invalid" class="btn">Submit</button>-->
+   <button [disabled]="register.invalid" class="sign-btn btn btn-success navbar-btn">Submit</button>
+  <button class="btn" onclick="reset()">Reset</button>
+  </div>
+</form>
+
+<!--<label for="zipcode">Zipcode</label>
+ <input type="text" id="zipcode" (blur)="testFunc(zipcode)" [(ngModal)]="zipcode" placeholder="ZipCode" name="zipcode">
+
+ <label for="location">Location</label>
+ <input type="text" id="location" [(ngModal)]="location" placeholder="Location" name="location">-->

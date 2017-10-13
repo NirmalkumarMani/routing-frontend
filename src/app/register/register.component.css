@@ -1,0 +1,10 @@
+  /*export class RegisterComponent implements OnInit {
+  private model: Register;
+  private register: FormGroup;
+  constructor(private formBuilder: FormBuilder) { 
+ this.register = this.formBuilder.group({
+   name: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+       zipCode: [null, Validators.required],
+      location: [null, Validators.required],
+  */
